@@ -2,7 +2,7 @@ class CreateGroups < ActiveRecord::Migration
   def change
     create_table :groups do |t|
       t.string :title
-      t.string :description
+      t.text :description
       t.integer :owner
       t.boolean :isPublic
       t.date :date
