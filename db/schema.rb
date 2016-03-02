@@ -14,8 +14,14 @@
 ActiveRecord::Schema.define(version: 20160222143314) do
 
   create_table "groups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.integer  "owner",       limit: 4
+    t.boolean  "isPublic"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "memberships", force: :cascade do |t|
