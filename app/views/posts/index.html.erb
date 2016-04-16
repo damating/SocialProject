@@ -1,0 +1,23 @@
+<%= link_to 'New Post', new_post_path, class: "btn btn-lg btn-primary" %>
+
+
+<div class="wrapper wrapper-content">
+  <div class="row">
+<%= @posts.each do |post| %>
+
+
+        <div class="col-lg-6">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5> <%= post.post %></h5>
+
+              <div class="ibox-content">
+                <%= post.description %>
+                <%= image_tag(post.picture_url, :width => 600, :class => "picture") if post.picture.present? %>
+              </div>
+            </div>
+          </div>
+        </div>
+<% end %>
+  </div>
+</div>

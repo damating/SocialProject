@@ -1,0 +1,6 @@
+<%= @groups.each do |group| %>
+    <%= group.title %>
+    <%= User.find(group.owner).name %>
+    <%= group.description %>
+    <%= group.isPublic? %>
+<% end %>
