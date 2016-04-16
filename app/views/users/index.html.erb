@@ -1,0 +1,4 @@
+<%= @users.each do |user| %>
+    <%= user.user_name %>
+    <%= image_tag(user.picture, :width => 300, :hight => 300) %>
+<% end %>
