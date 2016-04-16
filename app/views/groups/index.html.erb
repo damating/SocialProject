@@ -1,6 +1,40 @@
-<%= @groups.each do |group| %>
-    <%= group.title %>
-    <%= User.find(group.owner).name %>
-    <%= group.description %>
-    <%= group.isPublic? %>
-<% end %>
+<%= link_to "Add group", new_group_path, class: "btn btn-lg btn-primary" %>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <%= @groups.each do |group| %>
+    <div class="col-lg-4">
+      <div class="ibox">
+        <div class="ibox-title">
+          <span class="label label-primary pull-right">NEW</span>
+          <h5><%= link_to group.title, group_path(group) %></h5>
+          Created by: <%= group.owner.user_name %>
+        </div>
+        <div class="ibox-content">
+          <div class="team-members">
+            <!--<a href="#"><img alt="member" class="img-circle" src=""></a>-->
+            <!--<a href="#"><img alt="member" class="img-circle" src=""></a>-->
+            <!--<a href="#"><img alt="member" class="img-circle" src=""></a>-->
+            <!--<a href="#"><img alt="member" class="img-circle" src="" data-pin-nopin="true"></a>-->
+            <!--<a href="#"><img alt="member" class="img-circle" src=""></a>-->
+          </div>
+          <h4>Description</h4>
+
+          <p>
+            <%= group.description %>
+          </p>
+          <div class="row  m-t-sm">
+            <div class="col-sm-4">
+              <div class="font-bold">MEMBERS</div>
+              12
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
