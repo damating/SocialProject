@@ -1,25 +1,36 @@
 <div class="col-lg-12">
-  <div class="widget-head-color-box navy-bg p-lg text-center">
-    <div class="m-b-md">
-      <h2 class="font-bold no-margins">
-        <%= @group.owner.name %>
-      </h2>
-      <small>Founder of <%= @group.title %></small>
+  <div class="widget navy-bg no-padding">
+    <div class="p-m">
+      <h1 class="m-xs"><%= @group.title %></h1>
+
+      <h3 class="font-bold no-margins">
+        Founder: <%= @group.owner.name %>
+      </h3>
     </div>
-    <%= image_tag(@group.owner.picture, :width => 300, :hight => 300, :class => "img-circle circle-border m-b-md") %>
-    <div>
-      <span>100 Tweets</span> |
-      <span>350 Following</span> |
-      <span>610 Followers</span>
+    <div class="flot-chart">
+      <div class="flot-chart-content" id="flot-chart1" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas></div>
     </div>
   </div>
-  <div class="widget-text-box">
-    <h4 class="media-heading"><%= @group.title %></h4>
-    <p><%= @group.description  %></p>
-    <div class="text-right">
-      <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-      <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+</div>
+
+<div class="widget style1 navy-bg">
+  <div class="row vertical-align">
+    <div class="col-xs-3">
+      <i class="fa fa-user fa-3x"></i>
     </div>
+    <div class="col-xs-9 text-right">
+      <h2 class="font-bold">217</h2>
+    </div>
+  </div>
+</div>
+
+<div class="widget-text-box">
+  <%= image_tag(@group.owner.picture, :width => 100, :hight => 100, :class => "img-circle circle-border m-b-md") %>
+  <h4 class="media-heading"><%= @group.title %></h4>
+  <p><%= @group.description  %></p>
+  <div class="text-right">
+    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
   </div>
 </div>
 

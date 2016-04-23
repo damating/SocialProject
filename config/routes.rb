@@ -13,9 +13,11 @@ Myapp::Application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+
   resources :users
   resources :posts
   resources :groups
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -15,7 +15,7 @@
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <!--<li><a href="#">Logout</a></li>-->
                       <% if user_signed_in? %>
-                          <li><%= link_to 'Users', users_path%></li>
+                          <li><%= link_to 'Me', user_path(current_user.id) %>></li>
                           <li><%= link_to 'Edit profile', edit_user_registration_path%></li>
                           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                       <% else %>
