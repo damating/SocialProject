@@ -24,7 +24,14 @@
     margin-left: auto;
 }
 
-.groups {
-    padding-bottom: 50px;
+.col-lg-3_5 {
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+}
+
+.row-center {
+    display: block;
+    margin: 0 auto;
 }
 

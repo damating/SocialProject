@@ -1,143 +1,150 @@
-<div class="groups ">
-<div class="col-lg-12">
-  <div class="widget navy-bg no-padding">
-    <div class="p-m">
-      <h1 class="m-xs"><%= @group.title %></h1>
+<div class="wrapper wrapper-content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="widget navy-bg no-padding">
+        <div class="p-m">
+          <h1 class="m-xs"><%= @group.title %></h1>
 
-      <h3 class="font-bold no-margins">
-        Founder: <%= @group.owner.name %>
-      </h3>
-    </div>
-    <div class="flot-chart">
-      <div class="flot-chart-content" id="flot-chart1" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas></div>
-    </div>
-  </div>
-</div>
-
-<div class="widget style1 navy-bg">
-  <div class="row vertical-align">
-
-    <div class="col-xs-11 text-right">
-      <i class="fa fa-user fa-3x"></i>
-      <font size="6">217</font>
+          <h3 class="font-bold no-margins">
+            Founder: <%= @group.owner.name %>
+          </h3>
+        </div>
+        <div class="flot-chart">
+          <div class="flot-chart-content" id="flot-chart1" style="padding: 0px; position: relative;">
+            <canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas>
+            <canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 872px; height: 100px;" width="784" height="89"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="col-xs-1 text-left">
-      <i class="fa fa-thumbs-up fa-3x"></i>
-      <font size="6">400</font>
+    <div class="widget style1 navy-bg">
+      <div class="row vertical-align">
+
+        <div class="col-xs-11 text-right">
+          <i class="fa fa-user fa-3x"></i>
+          <font size="6">217</font>
+        </div>
+
+        <div class="col-xs-1 text-left">
+          <i class="fa fa-thumbs-up fa-3x"></i>
+          <font size="6">400</font>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="widget-text-box">
-  <%= image_tag(@group.owner.picture, :width => 100, :hight => 100, :class => "img-circle circle-border m-b-md") %>
-  <h4 class="media-heading"><%= @group.title %></h4>
-  <p><%= @group.description  %></p>
-  <div class="text-right">
-    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-  </div>
-</div>
+    <div class="widget-text-box">
+      <%= image_tag(@group.owner.picture, :width => 100, :hight => 100, :class => "img-circle circle-border m-b-md") %>
+      <h4 class="media-heading"><%= @group.title %></h4>
 
+      <p><%= @group.description %></p>
 
-<div class="social-feed-box col-lg-4">
-
-  <div class="pull-right social-action dropdown">
-    <button data-toggle="dropdown" class="dropdown-toggle btn-white">
-      <i class="fa fa-angle-down"></i>
-    </button>
-    <ul class="dropdown-menu m-t-xs">
-      <li><a href="#">Config</a></li>
-    </ul>
-  </div>
-  <div class="social-avatar">
-    <a href="" class="pull-left">
-      <%= image_tag(@group.owner.picture, :width => 200, :hight => 200, :class => "img-circle circle-border m-b-md") %>
-    </a>
-    <div class="media-body">
-      <a href="#">
-        Andrew Williams
-      </a>
-      <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+      <div class="text-right">
+        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+        <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+      </div>
     </div>
-  </div>
-  <div class="social-body">
-    <p>
-      Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-      default model text, and a search for 'lorem ipsum' will uncover many web sites still
-      in their infancy. Packages and web page editors now use Lorem Ipsum as their
-      default model text.
-    </p>
-    <p>
-      Lorem Ipsum as their
-      default model text, and a search for 'lorem ipsum' will uncover many web sites still
-      in their infancy. Packages and web page editors now use Lorem Ipsum as their
-      default model text.
-    </p>
-    <img src="/assets/DSC_0223.JPG" class="img-responsive">
-    <div class="btn-group">
-      <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
-      <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
-      <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
-    </div>
-  </div>
-  <div class="social-footer">
-    <div class="social-comment">
-      <a href="" class="pull-left">
-        <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
-      </a>
-      <div class="media-body">
-        <a href="#">
-          Andrew Williams
+
+    <% @posts.each do |post| %>
+    <div class="social-feed-box col-lg-4">
+
+      <div class="pull-right social-action dropdown">
+        <button data-toggle="dropdown" class="dropdown-toggle btn-white">
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <ul class="dropdown-menu m-t-xs">
+          <li><a href="#">Config</a></li>
+        </ul>
+      </div>
+      <div class="social-avatar">
+        <a href="" class="pull-left">
+          <%= image_tag(@group.owner.picture, :width => 200, :hight => 200, :class => "img-circle circle-border m-b-md") %>
         </a>
-        Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
-        <br>
-        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 26 Like this!</a> -
-        <small class="text-muted">12.06.2014</small>
-      </div>
-    </div>
 
-    <div class="social-comment">
-      <a href="" class="pull-left">
-        <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
-      </a>
-      <div class="media-body">
-        <a href="#">
-          Andrew Williams
-        </a>
-        Making this the first true generator on the Internet. It uses a dictionary of.
-        <br>
-        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
-        <small class="text-muted">10.07.2014</small>
-      </div>
-    </div>
+        <div class="media-body">
+          <a href="#">
+            <%= User.find(post.user_id).user_name %> - <%= post.post %>
+          </a>
+          <small class="text-muted"> <%= (post.created_at).strftime("%I:%M%p") %> - <%=(post.created_at).strftime("%d.%m.%Y") %></small>
 
-    <div class="social-comment">
-      <a href="" class="pull-left">
-        <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
-      </a>
-      <div class="media-body">
-        <a href="#">
-          Andrew Williams
-        </a>
-        Making this the first true generator on the Internet. It uses a dictionary of.
-        <br>
-        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
-        <small class="text-muted">10.07.2014</small>
+        </div>
       </div>
-    </div>
+      <div class="social-body">
+        <p>
+          <%= post.description %>
+        </p>
+        <%= image_tag post.picture, class: "img-responsive" %>
 
-    <div class="social-comment">
-      <a href="" class="pull-left">
-<%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
-      </a>
-      <div class="media-body">
-        <textarea class="form-control" placeholder="Write comment..."></textarea>
+        <div class="btn-group">
+          <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
+          <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
+          <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
+        </div>
       </div>
-    </div>
+      <div class="social-footer">
+        <div class="social-comment">
+          <a href="" class="pull-left">
+            <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
+          </a>
 
+          <div class="media-body">
+            <a href="#">
+              Andrew Williams
+            </a>
+            Internet tend to repeat predefined chunks as necessary, making this the first true generator on the
+            Internet. It uses a dictionary of over 200 Latin words.
+            <br>
+            <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 26 Like this!</a> -
+            <small class="text-muted">12.06.2014</small>
+          </div>
+        </div>
+
+        <div class="social-comment">
+          <a href="" class="pull-left">
+            <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
+          </a>
+
+          <div class="media-body">
+            <a href="#">
+              Andrew Williams
+            </a>
+            Making this the first true generator on the Internet. It uses a dictionary of.
+            <br>
+            <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
+            <small class="text-muted">10.07.2014</small>
+          </div>
+        </div>
+
+        <div class="social-comment">
+          <a href="" class="pull-left">
+            <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
+          </a>
+
+          <div class="media-body">
+            <a href="#">
+              Andrew Williams
+            </a>
+            Making this the first true generator on the Internet. It uses a dictionary of.
+            <br>
+            <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
+            <small class="text-muted">10.07.2014</small>
+          </div>
+        </div>
+
+        <div class="social-comment">
+          <a href="" class="pull-left">
+            <%= image_tag(@group.owner.picture, :width => 70, :hight => 70, :class => "img-circle circle-border m-b-md") %>
+          </a>
+
+          <div class="media-body">
+            <textarea class="form-control" placeholder="Write comment..."></textarea>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+        <% end %>
   </div>
-
-</div>
 </div>
 

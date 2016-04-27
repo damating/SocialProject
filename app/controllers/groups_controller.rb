@@ -22,7 +22,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @users_group = @group.users
+    #@users_group = @group.users
+    @posts = Post.where(group_id: @group.id).all
   end
 
   private

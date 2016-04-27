@@ -1,23 +1,100 @@
 <%= link_to 'New Post', new_post_path, class: "btn btn-lg btn-primary" %>
 
-
 <div class="wrapper wrapper-content">
   <div class="row">
-<%= @posts.each do |post| %>
 
+<% @posts.each do |post| %>
+<div class="social-feed-box col-lg-4">
 
-        <div class="col-lg-6">
-          <div class="ibox float-e-margins">
-            <div class="ibox-title">
-              <h5> <%= post.post %></h5>
+  <div class="pull-right social-action dropdown">
+    <button data-toggle="dropdown" class="dropdown-toggle btn-white">
+      <i class="fa fa-angle-down"></i>
+    </button>
+    <ul class="dropdown-menu m-t-xs">
+      <li><a href="#">Config</a></li>
+    </ul>
+  </div>
+  <div class="social-avatar">
+    <a href="" class="pull-left">
+      <%= image_tag(User.find_by_id(post.user_id).picture, :width => 200, :hight => 200, :class => "img-circle circle-border m-b-md") %>
+    </a>
+    <div class="media-body">
+      <a href="#">
+         <%= User.find_by_id(post.user_id).user_name %> - <%= post.post %>
+      </a>
+      <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+    </div>
+  </div>
+  <div class="social-body">
+    <p>
+      <%= post.description %>
+    </p>
+    <%= image_tag post.picture, class: "img-responsive" %>
+    <div class="btn-group">
+      <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
+      <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
+      <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
+    </div>
+  </div>
+  <div class="social-footer">
+    <div class="social-comment">
+      <a href="" class="pull-left">
+        Zdjecie
+      </a>
+      <div class="media-body">
+        <a href="#">
+          Andrew Williams
+        </a>
+        Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
+        <br>
+        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 26 Like this!</a> -
+        <small class="text-muted">12.06.2014</small>
+      </div>
+    </div>
 
-              <div class="ibox-content">
-                <%= post.description %>
-                <%= image_tag(post.picture_url, :width => 600, :class => "picture") if post.picture.present? %>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="social-comment">
+      <a href="" class="pull-left">
+        Zdjecie
+      </a>
+      <div class="media-body">
+        <a href="#">
+          Andrew Williams
+        </a>
+        Making this the first true generator on the Internet. It uses a dictionary of.
+        <br>
+        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
+        <small class="text-muted">10.07.2014</small>
+      </div>
+    </div>
+
+    <div class="social-comment">
+      <a href="" class="pull-left">
+        Zdjecie
+      </a>
+      <div class="media-body">
+        <a href="#">
+          Andrew Williams
+        </a>
+        Making this the first true generator on the Internet. It uses a dictionary of.
+        <br>
+        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
+        <small class="text-muted">10.07.2014</small>
+      </div>
+    </div>
+
+    <div class="social-comment">
+      <a href="" class="pull-left">
+        Zdjecie
+      </a>
+      <div class="media-body">
+        <textarea class="form-control" placeholder="Write comment..."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 <% end %>
+
   </div>
 </div>
